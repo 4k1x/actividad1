@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dando vida a la página con JavaScript - Blog DAR</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+
+        <!-- CABECERA DEL BLOG -->
+        <header class="cabecera-blog">
+            <h1><a href="index.html">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
+        </header>
+
+        <!-- ARTICULO COMPLETO -->
+        <main class="articulo-completo">
+            <header>
+                <h1>Dando vida a la página con JavaScript</h1>
+                <p class="fecha-post">Publicado el 24 de noviembre de 2026</p>
+            </header>
+
+            <img src="img/js.jpg" alt="Portada sobre JavaScript" class="imagen-destacada">
+
+            <section>
+                <p>
+                    Cierro esta pequeña serie de entradas con <strong>JavaScript</strong>, el lenguaje de programación que permite que una página web deje de ser un documento estático y pueda reaccionar a lo que hace el usuario: un clic de ratón, enviar un formulario, animaciones, temporizadores, etc.
+                </p>
+
+                <h2>¿Qué aporta JavaScript que no tienen HTML y CSS?</h2>
+                <p>
+                    HTML aporta la estructura y CSS el aspecto visual, pero ninguno de los dos puede por sí solo calcular valores, validar lo que el usuario escribe en un formulario antes de enviarlo, mostrar u ocultar elementos al pulsar un botón o pedir datos al servidor sin tener que recargar toda la página. Para todo eso está JavaScript, que se ejecuta directamente en el navegador del cliente.
+                </p>
+
+                <p>
+                    Un ejemplo clásico y muy sencillo: un botón que, al ser pulsado, cambia el texto de un párrafo en la página.
+                </p>
+
+                <pre class="caja-codigo"><code>&lt;button id="boton"&gt;Haz clic aquí&lt;/button&gt;
+&lt;p id="mensaje"&gt;Aún no has pulsado el botón.&lt;/p&gt;
+
+&lt;script&gt;
+  const boton = document.getElementById("boton");
+  const mensaje = document.getElementById("mensaje");
+
+  boton.addEventListener("click", () =&gt; {
+    mensaje.textContent = "¡Gracias por hacer clic!";
+  });
+&lt;/script&gt;</code></pre>
+
+                <p>Y a continuación tienes ese mismo botón funcionando en vivo en esta página:</p>
+
+                <!-- DEMOSTRACION INTERACTIVA REAL -->
+                <div class="demo-interactiva">
+                    <p style="margin-top: 0; color: #475569; font-size: 14px;">👇 Pulsa el siguiente botón para comprobar el funcionamiento:</p>
+                    <!-- Al hacer clic llamamos a la funcion que hemos creado en script.js -->
+                    <button type="button" class="boton-interactivo" onclick="manejarClicBoton()">
+                        Haz clic aquí
+                    </button>
+                    <p id="mensaje-interactivo" class="mensaje-demo">Aún no has pulsado el botón.</p>
+                </div>
+
+                <h2>Lo que he aprendido en esta primera toma de contacto</h2>
+                <ul>
+                    <li>
+                        El <strong>DOM</strong> (<em>Document Object Model</em>) es la representación en memoria del árbol HTML que JavaScript puede consultar y modificar en tiempo real. Cuando hacemos <span class="codigo-inline">document.getElementById(...)</span>, estamos seleccionando un elemento concreto para cambiar su contenido, su estilo o sus atributos.
+                    </li>
+                    <li>
+                        Los <strong>eventos</strong> (<span class="codigo-inline">click</span>, <span class="codigo-inline">submit</span>, <span class="codigo-inline">input</span>, etc.) son el mecanismo mediante el cual el navegador avisa a nuestro código de que ha ocurrido una acción del usuario, y podemos capturarlos con <span class="codigo-inline">addEventListener</span> o con atributos como <span class="codigo-inline">onclick</span>.
+                    </li>
+                    <li>
+                        Que la combinación de los tres lenguajes (HTML para el esqueleto, CSS para la apariencia y JavaScript para el dinamismo) es la base indispensable sobre la que funciona toda la web moderna.
+                    </li>
+                </ul>
+
+                <h2>Cierre de esta serie</h2>
+                <p>
+                    Con estas tres entradas doy por finalizada la Actividad 1 de DAR: hemos visto cómo montar la estructura básica en HTML, cómo darle un diseño limpio y agradable con CSS, y cómo dotar a la web de interactividad real con JavaScript. Ha sido un ejercicio muy formativo para entender los pilares del desarrollo frontend.
+                </p>
+            </section>
+
+            <!-- Bio del autor -->
+            <div class="caja-bio" style="margin-top: 30px;">
+                <img src="img/profile-pic.png" alt="Foto de perfil">
+                <div>
+                    <p>Escrito por <strong>Estudiante de DAR</strong>, que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</p>
+                </div>
+            </div>
+
+            <!-- Navegacion entre entradas -->
+            <nav class="barra-navegacion">
+                <a href="estilos-con-css.html" class="enlace-nav">← Anterior: Dando estilo a mi web con CSS</a>
+                <a href="index.html" class="enlace-nav">Volver a la portada 🏠</a>
+            </nav>
+        </main>
+
+        <footer class="pie-pagina">
+            <p>© <span id="anio-actual">2026</span> - Blog creado para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR) - UNIR</p>
+        </footer>
+
+    </div>
+
+    <!-- Script donde esta la logica del boton -->
+    <script src="js/script.js"></script>
+</body>
+</html>

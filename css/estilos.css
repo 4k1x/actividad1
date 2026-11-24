@@ -1,0 +1,270 @@
+/* Estilos para toda la pagina en general */
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: #f0f2f5;
+    color: #2b2b2b;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Enlaces normales */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #004080;
+}
+
+/* Contenedor central donde va todo el contenido metido */
+.contenedor-principal {
+    width: 820px;
+    max-width: 92%; /* Para que en pantallas pequeñas no se salga */
+    margin: 30px auto; /* 30px arriba y abajo, y auto a los lados para centrar */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 30px;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #dcdcdc;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); 
+}
+
+/* Cabecera del blog */
+.cabecera-blog {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.cabecera-blog h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    color: #1a202c;
+}
+
+.cabecera-blog h1 a {
+    color: #1a202c;
+    text-decoration: none;
+}
+
+.cabecera-blog h1 a:hover {
+    color: #6366f1; 
+}
+
+.subtitulo-blog {
+    margin: 0;
+    color: #718096;
+    font-size: 15px;
+}
+
+
+.caja-bio {
+    display: flex; /* Con flexbox se pone la foto al lado del texto */
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 6px;
+    padding: 12px 18px;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.caja-bio img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%; /* Foto redonda */
+    border: 2px solid #cbd5e1;
+}
+
+.caja-bio p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+
+.lista-entradas {
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+.tarjeta-entrada {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed #e2e8f0; /* Linea discontinua */
+}
+
+.tarjeta-entrada:last-child {
+    border-bottom: none; /* A la ultima no le ponemos linea */
+}
+
+.titulo-post-enlace {
+    font-size: 22px;
+    margin: 0 0 5px 0;
+    color: #6366f1;
+}
+
+.fecha-post {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 10px 0;
+    font-style: italic;
+}
+
+.resumen-post {
+    margin: 0;
+    color: #334155;
+    font-size: 15px;
+}
+
+.articulo-completo h1 {
+    font-size: 26px;
+    color: #0f172a;
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.imagen-destacada {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 20px 0;
+    border: 1px solid #cbd5e1;
+}
+
+/* Subtitulos dentro del articulo */
+.articulo-completo h2 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    border-left: 4px solid #6366f1; /* Barrita vertical a la izquierda */
+    padding-left: 10px;
+}
+
+.articulo-completo p {
+    margin-bottom: 16px;
+    font-size: 15px;
+    color: #334155;
+}
+
+.articulo-completo ul {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+.articulo-completo li {
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 15px;
+}
+
+/* Bloques de codigo con fondo oscuro */
+.caja-codigo {
+    background-color: #1e1e1e; /* Color oscuro tipo editor VS Code */
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 6px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    overflow-x: auto; /* Barra horizontal si el codigo es muy largo */
+    margin: 18px 0;
+    border: 1px solid #333333;
+}
+
+.codigo-inline {
+    background-color: #f1f5f9;
+    color: #d63384;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Caja de demostracion interactiva de JavaScript */
+.demo-interactiva {
+    background-color: #eff6ff;
+    border: 2px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.boton-interactivo {
+    background-color: #2563eb !important; /* Forzado con important para que no cambie */
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3);
+}
+
+.boton-interactivo:hover {
+    background-color: #1d4ed8 !important;
+}
+
+.mensaje-demo {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1e3a8a;
+    font-size: 16px;
+}
+
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.enlace-nav {
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #f1f5f9;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 1px solid #cbd5e1;
+}
+
+.enlace-nav:hover {
+    background-color: #e2e8f0;
+    text-decoration: none;
+}
+
+/* Pie de pagina */
+.pie-pagina {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* Para moviles (responsive basico) */
+@media (max-width: 600px) {
+    .contenedor-principal {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .caja-bio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .barra-navegacion {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

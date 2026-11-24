@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dando estilo a mi web con CSS - Blog DAR</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+
+        <!-- CABECERA DEL BLOG -->
+        <header class="cabecera-blog">
+            <h1><a href="index.html">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
+        </header>
+
+        <!-- ARTICULO COMPLETO -->
+        <main class="articulo-completo">
+            <header>
+                <h1>Dando estilo a mi web con CSS</h1>
+                <p class="fecha-post">Publicado el 09 de noviembre de 2026</p>
+            </header>
+
+            <img src="img/css.jpg" alt="Portada sobre CSS" class="imagen-destacada">
+
+            <section>
+                <p>
+                    Después de aprender a estructurar el contenido con HTML, tocaba el turno de <strong>CSS</strong> (<em>Cascading Style Sheets</em> o Hojas de Estilo en Cascada), el lenguaje que se encarga del aspecto puramente visual: colores, tipografías, espacios, tamaños y la disposición de los elementos en la pantalla.
+                </p>
+
+                <h2>La idea clave: separar contenido y presentación</h2>
+                <p>
+                    Lo primero que entendí es que HTML y CSS cumplen roles totalmente distintos y por eso conviene mantenerlos separados: el HTML describe <em>qué</em> hay en la página (su contenido y jerarquía), y el CSS describe <em>cómo se ve</em>. Esto se consigue enlazando una hoja de estilos externa desde la etiqueta <span class="codigo-inline">&lt;head&gt;</span>:
+                </p>
+
+                <pre class="caja-codigo"><code>&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
+
+                <p>Y en el archivo <span class="codigo-inline">styles.css</span> definimos las reglas de diseño:</p>
+
+                <pre class="caja-codigo"><code>body {
+  font-family: system-ui, sans-serif;
+  background-color: #f7f7f9;
+  color: #1f2937;
+}
+
+h1 {
+  color: #2563eb;
+}</code></pre>
+
+                <h2>Conceptos que me costó entender al principio</h2>
+                <ul>
+                    <li>
+                        <strong>El modelo de caja (box model)</strong>: cada elemento HTML es, en el fondo, una caja rectangular invisible que tiene su contenido, su relleno interior (<span class="codigo-inline">padding</span>), su borde (<span class="codigo-inline">border</span>) y su margen exterior (<span class="codigo-inline">margin</span>). Entender este concepto me ayudó muchísimo a evitar que las cosas se solaparan.
+                    </li>
+                    <li>
+                        <strong>Flexbox</strong>: antes colocar elementos uno al lado de otro era un dolor de cabeza enorme; con <span class="codigo-inline">display: flex</span> y propiedades como <span class="codigo-inline">justify-content</span> o <span class="codigo-inline">align-items</span> se resuelve en muy pocas líneas de código.
+                    </li>
+                    <li>
+                        <strong>Las clases frente a los identificadores</strong>: conviene usar clases (<span class="codigo-inline">.tarjeta</span>) para estilos que se van a reutilizar en varios elementos, y reservar los identificadores (<span class="codigo-inline">#cabecera</span>) para elementos únicos de la página.
+                    </li>
+                </ul>
+
+                <h2>Un ejemplo sencillo</h2>
+                <p>Por ejemplo, para diseñar una tarjeta con sombra y bordes redondeados:</p>
+
+                <pre class="caja-codigo"><code>.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}</code></pre>
+
+                <p>
+                    Con pocas líneas como estas ya se nota una gran diferencia entre una página "en bruto" y una que resulta agradable y cómoda de leer. En la próxima entrada hablaré de JavaScript, la pieza que falta para que la página reaccione a lo que hace la persona que la visita.
+                </p>
+            </section>
+
+            <!-- Bio del autor -->
+            <div class="caja-bio" style="margin-top: 30px;">
+                <img src="img/profile-pic.png" alt="Foto de perfil">
+                <div>
+                    <p>Escrito por <strong>Estudiante de DAR</strong>, que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</p>
+                </div>
+            </div>
+
+            <!-- Navegacion entre entradas -->
+            <nav class="barra-navegacion">
+                <a href="primeros-pasos-html.html" class="enlace-nav">← Anterior: Mis primeros pasos con HTML</a>
+                <a href="interactividad-con-javascript.html" class="enlace-nav">Siguiente: Dando vida a la página con JS →</a>
+            </nav>
+        </main>
+
+        <footer class="pie-pagina">
+            <p>© <span id="anio-actual">2026</span> - Blog creado para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR) - UNIR</p>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

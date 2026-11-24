@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis primeros pasos con HTML - Blog DAR</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+
+        <!-- CABECERA DEL BLOG -->
+        <header class="cabecera-blog">
+            <h1><a href="index.html">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
+        </header>
+
+        <!-- ARTICULO COMPLETO -->
+        <main class="articulo-completo">
+            <header>
+                <h1>Mis primeros pasos con HTML</h1>
+                <p class="fecha-post">Publicado el 02 de noviembre de 2026</p>
+            </header>
+
+            <!-- Foto que representa el articulo -->
+            <img src="img/html.jpg" alt="Portada sobre HTML" class="imagen-destacada">
+
+            <section>
+                <p>
+                    Empiezo este blog para ir dejando constancia de lo que voy aprendiendo mientras doy mis primeros pasos en el desarrollo de aplicaciones en red. Hoy le toca el turno a <strong>HTML</strong>, el lenguaje de marcado con el que se construye el esqueleto de cualquier página web.
+                </p>
+
+                <h2>¿Qué es HTML?</h2>
+                <p>
+                    HTML (<em>HyperText Markup Language</em>) no es un lenguaje de programación propiamente dicho, sino de <strong>marcado</strong>: describe el contenido de una página (títulos, párrafos, imágenes, enlaces, etc.) mediante etiquetas rodeadas por los símbolos de menor y mayor que. El navegador web lee e interpreta esas etiquetas y las convierte en lo que vemos visualmente en la pantalla.
+                </p>
+
+                <p>Un documento HTML básico y estándar tiene esta pinta:</p>
+
+                <!-- Bloque con ejemplo de codigo HTML basico -->
+                <pre class="caja-codigo"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;
+    &lt;p&gt;Esta es mi primera página web.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h2>Lo que más me ha llamado la atención</h2>
+                <ul>
+                    <li>
+                        La <strong>semántica</strong>: etiquetas como <span class="codigo-inline">&lt;header&gt;</span>, <span class="codigo-inline">&lt;nav&gt;</span>, <span class="codigo-inline">&lt;main&gt;</span> o <span class="codigo-inline">&lt;footer&gt;</span> no solo organizan el contenido de forma limpia, sino que también ayudan a los buscadores (SEO) y a las personas que usan lectores de pantalla a entender la página.
+                    </li>
+                    <li>
+                        Que un documento HTML bien estructurado es la base fundamental sobre la que luego se apoyan CSS (para darle diseño y color) y JavaScript (para añadirle comportamiento e interactividad). Sin una buena estructura HTML, todo lo demás se complica.
+                    </li>
+                    <li>
+                        Lo sencillo y potente que resulta enlazar páginas entre sí mediante la etiqueta <span class="codigo-inline">&lt;a&gt;</span> con el atributo <span class="codigo-inline">href</span>, que es precisamente lo que hace que un conjunto de archivos sueltos se convierta en un verdadero sitio web navegable.
+                    </li>
+                </ul>
+
+                <h2>Próximos pasos</h2>
+                <p>
+                    En la siguiente entrada contaré cómo le he dado estilo a esta misma estructura usando CSS, y en la última hablaré de cómo JavaScript permite añadir interactividad real al usuario. ¡Vamos a por ello!
+                </p>
+            </section>
+
+            <!-- Bio del autor al final del articulo -->
+            <div class="caja-bio" style="margin-top: 30px;">
+                <img src="img/profile-pic.png" alt="Foto de perfil">
+                <div>
+                    <p>Escrito por <strong>Estudiante de DAR</strong>, que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</p>
+                </div>
+            </div>
+
+            <!-- Botones de navegacion entre articulos -->
+            <nav class="barra-navegacion">
+                <a href="index.html" class="enlace-nav">← Volver a la portada</a>
+                <a href="estilos-con-css.html" class="enlace-nav">Siguiente: Dando estilo a mi web con CSS →</a>
+            </nav>
+        </main>
+
+        <!-- Pie de pagina -->
+        <footer class="pie-pagina">
+            <p>© <span id="anio-actual">2026</span> - Blog creado para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR) - UNIR</p>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

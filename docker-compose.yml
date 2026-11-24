@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  blog:
+    build: .
+    container_name: blog_estudiante_dar
+    ports:
+      - "8080:80"
+    restart: unless-stopped
