@@ -4,26 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dando estilo a mi web con CSS - Blog DAR</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-
     <div class="contenedor-principal">
-
-        <!-- CABECERA DEL BLOG -->
         <header class="cabecera-blog">
-            <h1><a href="index.html">Aprendiendo Desarrollo Web</a></h1>
-            <p class="subtitulo-blog">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
+            <h1><a href="../index.html" class="titulo-blog-texto">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog subtitulo-blog-texto">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
         </header>
-
-        <!-- ARTICULO COMPLETO -->
         <main class="articulo-completo">
             <header>
                 <h1>Dando estilo a mi web con CSS</h1>
                 <p class="fecha-post">Publicado el 09 de noviembre de 2026</p>
             </header>
 
-            <img src="img/css.jpg" alt="Portada sobre CSS" class="imagen-destacada">
+            <img src="../img/css.jpg" alt="Portada sobre CSS" class="imagen-destacada">
 
             <section>
                 <p>
@@ -35,9 +30,9 @@
                     Lo primero que entendí es que HTML y CSS cumplen roles totalmente distintos y por eso conviene mantenerlos separados: el HTML describe <em>qué</em> hay en la página (su contenido y jerarquía), y el CSS describe <em>cómo se ve</em>. Esto se consigue enlazando una hoja de estilos externa desde la etiqueta <span class="codigo-inline">&lt;head&gt;</span>:
                 </p>
 
-                <pre class="caja-codigo"><code>&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
+                <pre class="caja-codigo"><code>&lt;link rel="stylesheet" href="../css/estilos.css" /&gt;</code></pre>
 
-                <p>Y en el archivo <span class="codigo-inline">styles.css</span> definimos las reglas de diseño:</p>
+                <p>Y en el archivo CSS definimos las reglas de diseño:</p>
 
                 <pre class="caja-codigo"><code>body {
   font-family: system-ui, sans-serif;
@@ -79,15 +74,18 @@ h1 {
                 </p>
             </section>
 
-            <!-- Bio del autor -->
+            <div class="caja-likes">
+                <button type="button" class="btn-like" onclick="darLike('css')">
+                    Me gusta (<span id="contador-likes-css">0</span>)
+                </button>
+                <span id="mensaje-like-css" class="mensaje-like"></span>
+            </div>
             <div class="caja-bio" style="margin-top: 30px;">
-                <img src="img/profile-pic.png" alt="Foto de perfil">
+                <img src="../img/profile-pic.png" alt="Foto de perfil">
                 <div>
-                    <p>Escrito por <strong>Estudiante de DAR</strong>, que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</p>
+                    <p>Escrito por <strong class="nombre-autor">Estudiante de DAR</strong>, <span class="bio-autor">que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</span></p>
                 </div>
             </div>
-
-            <!-- Navegacion entre entradas -->
             <nav class="barra-navegacion">
                 <a href="primeros-pasos-html.html" class="enlace-nav">← Anterior: Mis primeros pasos con HTML</a>
                 <a href="interactividad-con-javascript.html" class="enlace-nav">Siguiente: Dando vida a la página con JS →</a>
@@ -95,11 +93,11 @@ h1 {
         </main>
 
         <footer class="pie-pagina">
-            <p>© <span id="anio-actual">2026</span> - Blog creado para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR) - UNIR</p>
+            <p>© <span id="anio-actual">2026</span> - Blog creado por <span class="nombre-autor">Estudiante de DAR</span> para la Actividad 1 de <span class="asignatura-texto">Desarrollo de Aplicaciones en Red (DAR) - UNIR</span></p>
         </footer>
 
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

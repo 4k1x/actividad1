@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis primeros pasos con HTML - Blog DAR</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-
     <div class="contenedor-principal">
-
-        <!-- CABECERA DEL BLOG -->
         <header class="cabecera-blog">
-            <h1><a href="index.html">Aprendiendo Desarrollo Web</a></h1>
-            <p class="subtitulo-blog">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
+            <h1><a href="../index.html" class="titulo-blog-texto">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog subtitulo-blog-texto">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
         </header>
-
-        <!-- ARTICULO COMPLETO -->
         <main class="articulo-completo">
             <header>
                 <h1>Mis primeros pasos con HTML</h1>
                 <p class="fecha-post">Publicado el 02 de noviembre de 2026</p>
             </header>
-
-            <!-- Foto que representa el articulo -->
-            <img src="img/html.jpg" alt="Portada sobre HTML" class="imagen-destacada">
+            <img src="../img/html.jpg" alt="Portada sobre HTML" class="imagen-destacada">
 
             <section>
                 <p>
@@ -38,7 +31,6 @@
 
                 <p>Un documento HTML básico y estándar tiene esta pinta:</p>
 
-                <!-- Bloque con ejemplo de codigo HTML basico -->
                 <pre class="caja-codigo"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
   &lt;head&gt;
@@ -69,29 +61,32 @@
                     En la siguiente entrada contaré cómo le he dado estilo a esta misma estructura usando CSS, y en la última hablaré de cómo JavaScript permite añadir interactividad real al usuario. ¡Vamos a por ello!
                 </p>
             </section>
+            <div class="caja-likes">
+                <button type="button" class="btn-like" onclick="darLike('html')">
+                    Me gusta (<span id="contador-likes-html">0</span>)
+                </button>
+                <span id="mensaje-like-html" class="mensaje-like"></span>
+            </div>
 
-            <!-- Bio del autor al final del articulo -->
             <div class="caja-bio" style="margin-top: 30px;">
-                <img src="img/profile-pic.png" alt="Foto de perfil">
+                <img src="../img/profile-pic.png" alt="Foto de perfil">
                 <div>
-                    <p>Escrito por <strong>Estudiante de DAR</strong>, que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</p>
+                    <p>Escrito por <strong class="nombre-autor">Estudiante de DAR</strong>, <span class="bio-autor">que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</span></p>
                 </div>
             </div>
 
-            <!-- Botones de navegacion entre articulos -->
             <nav class="barra-navegacion">
-                <a href="index.html" class="enlace-nav">← Volver a la portada</a>
+                <a href="../index.html" class="enlace-nav">← Volver a la portada</a>
                 <a href="estilos-con-css.html" class="enlace-nav">Siguiente: Dando estilo a mi web con CSS →</a>
             </nav>
         </main>
 
-        <!-- Pie de pagina -->
         <footer class="pie-pagina">
-            <p>© <span id="anio-actual">2026</span> - Blog creado para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR) - UNIR</p>
+            <p>© <span id="anio-actual">2026</span> - Blog creado por <span class="nombre-autor">Estudiante de DAR</span> para la Actividad 1 de <span class="asignatura-texto">Desarrollo de Aplicaciones en Red (DAR) - UNIR</span></p>
         </footer>
 
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

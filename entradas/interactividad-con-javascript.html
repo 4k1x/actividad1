@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dando vida a la página con JavaScript - Blog DAR</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <header class="cabecera-blog">
+            <h1><a href="../index.html" class="titulo-blog-texto">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog subtitulo-blog-texto">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
+        </header>
+        <main class="articulo-completo">
+            <header>
+                <h1>Dando vida a la página con JavaScript</h1>
+                <p class="fecha-post">Publicado el 24 de noviembre de 2026</p>
+            </header>
+
+            <img src="../img/js.jpg" alt="Portada sobre JavaScript" class="imagen-destacada">
+
+            <section>
+                <p>
+                    Cierro esta pequeña serie de entradas con <strong>JavaScript</strong>, el lenguaje de programación que permite que una página web deje de ser un documento estático y pueda reaccionar a lo que hace el usuario: un clic de ratón, enviar un formulario, filtrar contenido en vivo o recordar sus preferencias.
+                </p>
+
+                <h2>¿Qué aporta JavaScript que no tienen HTML y CSS?</h2>
+                <p>
+                    HTML aporta la estructura y CSS el aspecto visual, pero ninguno de los dos puede por sí solo calcular valores, validar lo que el usuario escribe, pedir datos al servidor sin recargar toda la página o guardar preferencias en el navegador. Para todo eso usamos JavaScript, que se ejecuta directamente en el cliente.
+                </p>
+
+                <h2>¿Cómo hemos aplicado JavaScript de forma real en este blog?</h2>
+                <p>
+                    En lugar de poner un botón ficticio que no sirva para nada, en este blog hemos utilizado JavaScript para resolver problemas reales del desarrollo web:
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>1. Variables globales del autor y del blog:</strong> En lugar de escribir el nombre del autor o la descripción repetida en cada archivo HTML, definimos una variable en <span class="codigo-inline">script.js</span> y JavaScript rellena automáticamente esos datos en toda la web.
+                    </li>
+                    <li>
+                        <strong>2. Carga dinámica de entradas (Fetch y JSON):</strong> La portada ya no tiene los enlaces escritos a mano. Mediante <span class="codigo-inline">fetch("entradas.json")</span>, JavaScript lee la lista de artículos y genera las tarjetas dinámicamente con un bucle.
+                    </li>
+                    <li>
+                        <strong>3. Buscador en tiempo real:</strong> En la portada, el evento <span class="codigo-inline">onkeyup</span> analiza lo que escribe el usuario y oculta las entradas que no coinciden en tiempo real.
+                    </li>
+                    <li>
+                        <strong>4. Sistema de "Me gusta":</strong> El botón al final de cada artículo incrementa un contador interactivo en pantalla manipulando directamente el DOM con JavaScript.
+                    </li>
+                </ul>
+
+                <h2>Ejemplo: cómo inyectamos las variables del autor en el DOM</h2>
+
+                <pre class="caja-codigo"><code>// Variables de configuracion centralizadas
+var configBlog = {
+    autor: "Estudiante de DAR",
+    bio: "dando sus primeros pasos en desarrollo web..."
+};
+
+// Rellenamos todos los elementos con la clase "nombre-autor"
+var autores = document.getElementsByClassName("nombre-autor");
+for (var i = 0; i < autores.length; i++) {
+    autores[i].innerText = configBlog.autor;
+}</code></pre>
+                <div class="caja-likes">
+                    <button type="button" class="btn-like" onclick="darLike('js')">
+                        Me gusta (<span id="contador-likes-js">0</span>)
+                    </button>
+                    <span id="mensaje-like-js" class="mensaje-like"></span>
+                </div>
+
+                <h2>Lo que he aprendido en esta primera toma de contacto</h2>
+                <ul>
+                    <li>
+                        El <strong>DOM</strong> (<em>Document Object Model</em>) es la representación en memoria del árbol HTML que JavaScript puede consultar y modificar en tiempo real con métodos como <span class="codigo-inline">document.getElementsByClassName(...)</span> o <span class="codigo-inline">innerHTML</span>.
+                    </li>
+                    <li>
+                        La API <strong>Fetch</strong> permite hacer peticiones asíncronas para cargar datos (archivos JSON o respuestas de un servidor) sin tener que recargar la página completa.
+                    </li>
+                    <li>
+                        Los <strong>eventos</strong> (como <span class="codigo-inline">onclick</span> u <span class="codigo-inline">onkeyup</span>) nos permiten escuchar las acciones del usuario y ejecutar funciones que actualizan la interfaz al instante.
+                    </li>
+                </ul>
+
+                <h2>Cierre de esta serie</h2>
+                <p>
+                    Con estas tres entradas doy por finalizada la Actividad 1 de DAR: hemos visto cómo estructurar con HTML5, cómo maquetar y diseñar con CSS3, y cómo dotar a la web de dinamismo, variables y automatización real con JavaScript. Ha sido un ejercicio fundamental para asimilar las bases del desarrollo web.
+                </p>
+            </section>
+            <div class="caja-bio" style="margin-top: 30px;">
+                <img src="../img/profile-pic.png" alt="Foto de perfil">
+                <div>
+                    <p>Escrito por <strong class="nombre-autor">Estudiante de DAR</strong>, <span class="bio-autor">que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</span></p>
+                </div>
+            </div>
+            <nav class="barra-navegacion">
+                <a href="estilos-con-css.html" class="enlace-nav">← Anterior: Dando estilo a mi web con CSS</a>
+                <a href="../index.html" class="enlace-nav">Volver a la portada</a>
+            </nav>
+        </main>
+
+        <footer class="pie-pagina">
+            <p>© <span id="anio-actual">2026</span> - Blog creado por <span class="nombre-autor">Estudiante de DAR</span> para la Actividad 1 de <span class="asignatura-texto">Desarrollo de Aplicaciones en Red (DAR) - UNIR</span></p>
+        </footer>
+
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

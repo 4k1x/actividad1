@@ -1,0 +1,20 @@
+[
+  {
+    "archivo": "primeros-pasos-html.html",
+    "titulo": "Mis primeros pasos con HTML",
+    "fecha": "02 de noviembre de 2026",
+    "resumen": "Cómo descubrí el lenguaje que da estructura a cualquier página web. En esta entrada explico qué es HTML, las etiquetas básicas y la importancia de la estructura semántica."
+  },
+  {
+    "archivo": "estilos-con-css.html",
+    "titulo": "Dando estilo a mi web con CSS",
+    "fecha": "09 de noviembre de 2026",
+    "resumen": "Segunda parada en mi aprendizaje: cómo CSS transforma una página plana en algo visual. Hablo del modelo de caja (box model), Flexbox y cómo separar contenido de presentación."
+  },
+  {
+    "archivo": "interactividad-con-javascript.html",
+    "titulo": "Dando vida a la página con JavaScript",
+    "fecha": "24 de noviembre de 2026",
+    "resumen": "Última entrada de esta serie: cómo JavaScript añade comportamiento e interactividad. Repasamos la manipulación del DOM, eventos, carga dinámica con Fetch y contadores interactivos."
+  }
+]

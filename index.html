@@ -4,78 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendiendo Desarrollo Web - Portada</title>
-    <!-- CSS externa -->
+    <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-
     <div class="contenedor-principal">
-
         <header class="cabecera-blog">
-            <h1><a href="index.html">Aprendiendo Desarrollo Web</a></h1>
-            <p class="subtitulo-blog">Blog personal donde documento lo que voy aprendiendo sobre HTML, CSS y JavaScript para la Actividad 1 de DAR.</p>
+            <h1><a href="index.html" class="titulo-blog-texto">Aprendiendo Desarrollo Web</a></h1>
+            <p class="subtitulo-blog subtitulo-blog-texto">Blog personal para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR)</p>
         </header>
-
         <div class="caja-bio">
             <img src="img/profile-pic.png" alt="Foto de perfil">
             <div>
-                <p>Escrito por <strong>Francisco Calleja Vázquez</strong></p>
+                <p>Escrito por <strong class="nombre-autor">Estudiante de DAR</strong>, <span class="bio-autor">que está dando sus primeros pasos en el desarrollo de aplicaciones en red.</span></p>
             </div>
         </div>
-
+        <section class="caja-busqueda">
+            <input type="text" id="campo-buscar" onkeyup="filtrarEntradas()" placeholder="Buscar entradas por título o tema (HTML, CSS, JS...)...">
+            <p id="aviso-sin-resultados" style="display: none; color: #ef4444; font-size: 14px; margin-top: 10px; font-weight: bold;">
+                No se ha encontrado ninguna entrada que coincida con tu búsqueda.
+            </p>
+        </section>
         <main>
             <h2 style="font-size: 20px; color: #334155; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px;">
                 Todas las entradas del blog:
             </h2>
 
-            <ul class="lista-entradas">
-
-                <li class="tarjeta-entrada">
-                    <article>
-                        <h3 class="titulo-post-enlace">
-                            <a href="primeros-pasos-html.html">Mis primeros pasos con HTML</a>
-                        </h3>
-                        <p class="fecha-post">📅 02 de noviembre de 2026</p>
-                        <p class="resumen-post">
-                            Cómo descubrí el lenguaje que da estructura a cualquier página web. En esta entrada explico qué es HTML, las etiquetas básicas y la importancia de la estructura semántica.
-                        </p>
-                    </article>
+            <ul class="lista-entradas" id="lista-articulos">
+                <li style="color: #64748b; font-style: italic; list-style: none;">
+                    Cargando entradas con JavaScript...
                 </li>
-
-                <li class="tarjeta-entrada">
-                    <article>
-                        <h3 class="titulo-post-enlace">
-                            <a href="estilos-con-css.html">Dando estilo a mi web con CSS</a>
-                        </h3>
-                        <p class="fecha-post">📅 09 de noviembre de 2026</p>
-                        <p class="resumen-post">
-                            Segunda parada en mi aprendizaje: cómo CSS transforma una página plana en algo visual. Hablo del modelo de caja (box model), Flexbox y cómo separar contenido de presentación.
-                        </p>
-                    </article>
-                </li>
-
-                <li class="tarjeta-entrada">
-                    <article>
-                        <h3 class="titulo-post-enlace">
-                            <a href="interactividad-con-javascript.html">Dando vida a la página con JavaScript</a>
-                        </h3>
-                        <p class="fecha-post">📅 24 de noviembre de 2026</p>
-                        <p class="resumen-post">
-                            Última entrada de esta serie: cómo JavaScript añade comportamiento e interactividad. Incluye una pequeña demostración de un botón interactivo real funcionando en la página.
-                        </p>
-                    </article>
-                </li>
-
             </ul>
         </main>
-
         <footer class="pie-pagina">
-            <p>© <span id="anio-actual">2026</span> - Blog creado para la Actividad 1 de Desarrollo de Aplicaciones en Red (DAR) - UNIR</p>
+            <p>© <span id="anio-actual">2026</span> - Blog creado por <span class="nombre-autor">Estudiante de DAR</span> para la Actividad 1 de <span class="asignatura-texto">Desarrollo de Aplicaciones en Red (DAR) - UNIR</span></p>
         </footer>
-
     </div>
 
-    <!-- Enlace al archivo de JavaScript -->
+    <!-- Enlace al archivo de JavaScript donde estan las variables y la logica -->
     <script src="js/script.js"></script>
 </body>
 </html>
