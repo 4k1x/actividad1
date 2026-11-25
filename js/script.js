@@ -130,6 +130,59 @@ function darLike(postId) {
     }
 }
 
+function cargarNavegacion() {
+    var nav = document.getElementById("barra-navegacion");
+    if (!nav) return; // Solo en paginas de entrada, no en portada
+
+    // Sacamos el nombre del archivo actual de la URL
+    var rutaActual = window.location.pathname;
+    var archivoActual = rutaActual.substring(rutaActual.lastIndexOf("/") + 1);
+
+    // Desde la carpeta entradas/ el JSON esta un nivel arriba
+    fetch("../entradas.json")
+        .then(function(respuesta) {
+            if (!respuesta.ok) {
+                throw new Error("No se pudo cargar entradas.json");
+            }
+            return respuesta.json();
+        })
+        .then(function(entradas) {
+            // Buscamos el indice de la entrada actual
+            var indiceActual = -1;
+            for (var i = 0; i < entradas.length; i++) {
+                if (entradas[i].archivo === archivoActual) {
+                    indiceActual = i;
+                    break;
+                }
+            }
+            if (indiceActual === -1) return;
+
+            var html = "";
+
+            // Enlace anterior: entrada previa o portada si es la primera
+            if (indiceActual > 0) {
+                var anterior = entradas[indiceActual - 1];
+                html += '<a href="' + anterior.archivo + '" class="enlace-nav">← ' + anterior.titulo + '</a>';
+            } else {
+                html += '<a href="../index.html" class="enlace-nav">← Volver a la portada</a>';
+            }
+
+            // Enlace siguiente: entrada siguiente o portada si es la ultima
+            if (indiceActual < entradas.length - 1) {
+                var siguiente = entradas[indiceActual + 1];
+                html += '<a href="' + siguiente.archivo + '" class="enlace-nav">' + siguiente.titulo + ' →</a>';
+            } else {
+                html += '<a href="../index.html" class="enlace-nav">Volver a la portada</a>';
+            }
+
+            nav.innerHTML = html;
+            console.log("Navegacion cargada para: " + archivoActual);
+        })
+        .catch(function(error) {
+            console.error("Error al cargar la navegacion:", error);
+        });
+}
+
 function cargarAnioActual() {
     var fecha = new Date();
     var anio = fecha.getFullYear();
@@ -146,4 +199,5 @@ window.onload = function() {
     // Cargamos año del footer y entradas dinámicas
     cargarAnioActual();
     cargarEntradasAutomaticamente();
+    cargarNavegacion();
 };
